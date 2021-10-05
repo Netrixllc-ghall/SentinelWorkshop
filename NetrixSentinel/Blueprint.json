@@ -1,0 +1,75 @@
+{
+  "properties": {
+    "description": "Add the bits that MSSP requested to complete the deployment foundation.",
+    "targetScope": "subscription",
+    "parameters": {
+      "enableRules_workspace": {
+        "type": "string",
+        "metadata": {
+          "displayName": "workspace (EnableRules)"
+        },
+        "allowedValues": []
+      },
+      "nobeiumwatchlist_workspaceName": {
+        "type": "string",
+        "metadata": {
+          "displayName": "workspaceName (Nobeiumwatchlist)",
+          "description": "Workspace name for Log Analytics where Sentinel is setup"
+        },
+        "allowedValues": []
+      },
+      "knownCloudIP_ASSubscriptionId": {
+        "type": "string",
+        "metadata": {
+          "displayName": "ASSubscriptionId (KnownCloudIP)",
+          "description": "The subscription Id where the Azure Sentinel workspace resides."
+        },
+        "defaultValue": "Enter the Subscription Id for the Azure Sentinel Workspace",
+        "allowedValues": []
+      },
+      "knownCloudIP_ASResourceGroupName": {
+        "type": "string",
+        "metadata": {
+          "displayName": "ASResourceGroupName (KnownCloudIP)",
+          "description": "The resource group name where the Azure Sentinel workspae resides"
+        },
+        "defaultValue": "Enter the resource group name for the Azure Sentinel workspace",
+        "allowedValues": []
+      },
+      "knownCloudIP_ASWorkspaceName": {
+        "type": "string",
+        "metadata": {
+          "displayName": "ASWorkspaceName (KnownCloudIP)",
+          "description": "The name of the Azure Sentinel workspace"
+        },
+        "defaultValue": "Enter the Azure Sentinel workspace name",
+        "allowedValues": []
+      },
+      "enableRiskIQSolutions_location": {
+        "type": "string",
+        "metadata": {
+          "displayName": "location (EnableRiskIQSolutions)",
+          "description": "Not used, but needed to pass arm-ttk test `Location-Should-Not-Be-Hardcoded`.  We instead use the `workspace-location` which is derived from the LA workspace"
+        },
+        "allowedValues": []
+      },
+      "enableRiskIQSolutions_workspace-location": {
+        "type": "string",
+        "metadata": {
+          "displayName": "workspace-location (EnableRiskIQSolutions)",
+          "description": "Region to deploy solution resources"
+        },
+        "allowedValues": []
+      }
+    },
+    "resourceGroups": {
+      "ResourceGroup": {
+        "metadata": {
+          "displayName": "Resource Group"
+        },
+        "dependsOn": []
+      }
+    },
+    "blueprintName": "NetrixSentinel"
+  }
+}
